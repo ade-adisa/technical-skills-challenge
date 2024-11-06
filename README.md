@@ -1,12 +1,19 @@
 # Technical-skills-challenge
 
 #### Sample integration of the Login Form with Electron
-To integrate the `Login Form` component from the repository (https://github.com/ade-adisa/design-sys-angular1105) with Electron for a desktop application, follow this outline:
+To integrate the `Login Form` component from this sample repository (https://github.com/ade-adisa/design-sys-angular1105) with Electron for a desktop application, follow this outline:
+
+**Set Up Your the Angular App** 
+Ensure your Angular app is ready and includes the login form component. Build the app for production
+`ng build --prod --base-href ./`
+This command creates a production build of your app in the dist/ directory (by default dist/your-app-name).
+Integrate with Electron: Update the Electron code to load the built Angular app instead of http://localhost:4200.
 
 **Code Outline**:
 ```javascript
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const url = require('url');
 
 function createWindow() {
   const mainWindow = new BrowserWindow({
@@ -14,12 +21,19 @@ function createWindow() {
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
-      nodeIntegration: true,
-      contextIsolation: false, // Ensure this setting is secure in production
+      nodeIntegration: false,
+      contextIsolation: true, // Enabling this setting is secure for production
     },
   });
 
-  mainWindow.loadURL('http://localhost:4200');
+  // Load the built Angular app
+  mainWindow.loadURL(
+    url.format({
+      pathname: path.join(__dirname, 'dist/design-sys-angular1105/index.html'), // Adjust path to actual build directory
+      protocol: 'file:',
+      slashes: true,
+    })
+  );
 }
 
 app.whenReady().then(createWindow);
