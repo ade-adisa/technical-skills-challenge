@@ -1,4 +1,4 @@
-# technical-skills-challenge
+# Technical-skills-challenge
 
 #### 5. Sample integration of the Login Form with Electron
 To integrate the `Login Form` component from the repository (https://github.com/ade-adisa/design-sys-angular1105) with Electron for a desktop application, follow this outline:
