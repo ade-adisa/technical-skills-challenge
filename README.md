@@ -68,5 +68,5 @@ app.on('activate', () => {
 *Example*: Integrate the `Login Form` component by using Ignite's generators for creating stores and connecting them to Electron's render process for seamless state management.
 
 #### Additional Thoughts
-Optimizing this component with particular attention do data heavy domains, like the semiconductor space, would require additonal attention to details, data security and further, GDPR and other security or jurisdictional compliance, and acessibility. In furtherance of visual identity, classification and adaptability to brand guidelines, typocarphy, iconography, localisation will also be essential.
+Optimizing this component with particular attention do data heavy domains, like the semiconductor space, would require additonal attention to details, GDPR and other security or jurisdictional compliance, and acessibility. In furtherance of visual identity, classification and adaptability to brand guidelines, typocarphy, iconography, localisation will also be essential.
 
