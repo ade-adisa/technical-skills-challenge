@@ -5,7 +5,6 @@ To integrate the `Login Form` component from the repository (https://github.com/
 
 **Code Outline**:
 ```javascript
-// main.js (Electron Main Process)
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 
@@ -20,7 +19,7 @@ function createWindow() {
     },
   });
 
-  mainWindow.loadURL('http://localhost:4200'); // Ensure Angular app is running
+  mainWindow.loadURL('http://localhost:4200');
 }
 
 app.whenReady().then(createWindow);
